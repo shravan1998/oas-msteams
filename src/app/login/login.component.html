@@ -1,0 +1,21 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()" novalidate="true" [formGroup]="loginForm" autocomplete="off">
+        <div class="form-group">
+          <label for="username">Email address</label>
+          <input type="text" class="form-control" id="username" name="username" autocomplete="off"
+          formControlName="loginName" [ngClass]="{ 'is-invalid': fpClick && loginForm.value.loginName === '' }"
+          placeholder="Username">
+          <div *ngIf=" fpClick && loginForm.value.loginName === '' " class="invalid-feedback">
+            Please enter username
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" autocomplete="off"
+          formControlName="loginPass" placeholder="Password">
+        </div>
+     
+        <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+

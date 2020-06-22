@@ -1,0 +1,30 @@
+{
+  "name": {
+   "short":"oas-teams"
+  },
+  "id":"582a1c15-b564-428f-bb22-2e84ae62e081",
+  "packageName":"com.devappsys.oas",
+  "developer":  {
+    "name": "devappsys",
+    "websiteUrl": "https://devappsys.com/",
+    "privacyUrl": "https://devappsys.com",
+    "termsOfUseUrl": "https://devappsys.com"
+   
+  },
+  "description":{
+    "short":"timesheet app",
+    "full":"this is the timesheet app where user updates timesheet and views"
+  },
+  "accentColor": "#1976d2",
+  "version":"1.0",
+  
+  
+ 
+  "icons": 
+    {
+      "outline":"black",
+      "color":"red"
+    },
+   
+  "manifestVersion":"1.0"
+}
