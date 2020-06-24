@@ -129,6 +129,7 @@ export class LoginComponent implements OnInit {
         false,
       )
       .subscribe(response => {
+        console.log(response);
         Swal.showLoading();
         if (response.body.status === 0) {
           if (response.body.data.user.isFirstLogin === 0) {

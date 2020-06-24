@@ -13,8 +13,8 @@ import { tap } from 'rxjs/operators';
 export class TeamsService {
 
   // public API = 'http://localhost:8080/web/';
-  token = "xoxp-969360925856-959248215649-961978930499-a904c8c1d0a605767f151794e4a68fdb";
-  public serverUrl = "http://localhost:8080/web/";
+  //token = "xoxp-969360925856-959248215649-961978930499-a904c8c1d0a605767f151794e4a68fdb";
+  public serverUrl = "http://localhost:8080/";
   //  serverUrl = 'http://localhost:8080/web/';
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar,private router:Router) {}
@@ -36,6 +36,7 @@ export class TeamsService {
         tap((response: any) => {
           const apires: APIResponse = response.body;
           let result = false;
+          console.log(response);
           if (apires.status === 0) {
             localStorage.setItem("token", response.headers.get("x-auth-token"));
             // console.log(
@@ -51,7 +52,7 @@ export class TeamsService {
               localStorage.setItem("user", JSON.stringify(emp));
               sessionStorage.setItem("login", "true");
              // console.log(localStorage.getItem("user"));
-          
+              
               
             
             }
@@ -142,7 +143,7 @@ export class TeamsService {
     // this.pd.showProgressDialog('Please wait...');
     const body = JSON.stringify(object);
     const url = this.serverUrl + queryUrl;
-    this.token = localStorage.getItem("token");
+    
     const options = {
       headers: new HttpHeaders({
         "Content-Type": "application/json",
